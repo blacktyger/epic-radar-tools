@@ -1,0 +1,67 @@
+## DATABASE
+- app settings stored in db_app.pickle (module pickle)
+- user settings in db_user.json (module json)
+
+### LOGIC:
+
+=================================================================
+>> RUNING APPLICATION
+    if 1st time run:
+        - run :welcome_window:
+        if option :scann dirs for existing server files:
+            if files ['epic-server.toml', 'epic-server.log'] in path ['C:\Users\*USER*\.epic\']:
+                if ask to use this instance True:
+                    if option :user input ['epic.exe'] file path:
+                        - save server file path to db
+                        - exit :welcome_window: and go to dashboard
+
+                    elif option :scann for ['epic.exe'] file path:
+                        if file found:
+                            - save server file path to db
+                            - exit :welcome_window: and go to dashboard
+                        else:
+                            - show error message
+                            - options :go back:
+            elif:
+                - show message no files in default paths
+                - options :go back:
+                
+        elif option :provide server path:
+            - user input path
+            if files ['epic.exe'] in user path:
+                if files ['epic-server.toml', 'epic-server.log'] in path ['C:\Users\*USER*\.epic\']:
+                    - save path to db
+                    - exit :welcome_window: and go to dashboard
+                elif files ['epic-server.toml', 'epic-server.log'] in user path:
+                    - save path to db
+                    - go to :dashboard:
+                else:
+                    - show message about missing config files
+                    - options :go back:
+            else:
+                - show message about missing files
+                - options :go back:
+
+        elif option :create fresh instalation:
+            - go to :create_window:
+
+    else: 
+        if ['epic.exe'] path saved in db:
+            - go to :dashboard:
+        else:
+            - got to :welcome_window:
+
+=================================================================
+
+
+### GUI ELEMENTS:
+> if 1st time run:
+    - BITTON: scann for server path
+    - BUTTON: provide server path
+    - BUTTON: create fresh instalation
+> else:
+    -
+
+
+- download from ['https://d1ftoepmu0es39.cloudfront.net/epic-server-2.13.0.zip']
+- take care about versions
