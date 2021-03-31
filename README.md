@@ -13,6 +13,7 @@ Set of tools to help manage node server, wallet and mining from https://epicrada
 
 ### NEXT:
 * NODE-Monitor - All kinds of statistics pulled straight from chain
+* TG-Bridge - quick error sharing with telegram help-desk
 * EPIC-AIO - Wallet, server and miner in single GUI user-friendly interface
 * TO BE ADDED..
 
